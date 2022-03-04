@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descobrir nacionalidade </title>
+</head>
+<body>
+    <h1> Qual a sua nacionalidade </h1>
+    Nacionalidade <input type="text" name="nac" id="txtnac">
+    <input type="button" value="verificar" onclick="descobrir()">
+    <div id="res">
+
+    </div>
+    <script>
+        function descobrir(){
+                var txtnac = document.getElementById('txtnac')
+                var res = document.getElementById('res')
+                var vel = (txtnac.value) 
+                res.innerHTML = `Sua Nacionalidade é: ${vel}`
+                if(vel ==='brasil' || vel === 'Brasileiro' 
+                || vel === 'brasileiro' || vel === 'Brasil'){
+                    res.innerHTML += `Você é Brasileiro! `
+                }else{
+                    res.innerHTML += `Você é estrangeiro! `
+                }
+
+
+        }
+    </script>
+</body>
+</html>
