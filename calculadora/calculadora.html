@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="calculadora.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <div class = 'fundo'>
+        <h1> Lucas Cardoso</h1> <br>
+        <div class = 'calculadora'>
+            <h1>Calculadora</h1>
+            <p id = 'resultado'> </p>
+            <table> 
+            
+                <tr> 
+             <td><input type="button" value="C" class = 'button' onclick = "clean ()" >  </td>
+                <td>  <input type="button" value="<" class = 'button' onclick = "back ()"></td>
+                    <td>  <input type="button" value="/" class = 'button' onclick = "inserir ('/')"></td>
+                        <td> <input type="button" value="X" class = 'button' onclick = "inserir ('X')"> </td>
+                </tr>
+
+                <tr>
+                    <td> <input type="button" onclick = "inserir('7')" value="7" class = 'button'></td>
+                        <td>  <input type="button" onclick = "inserir('8')" value="8" class = 'button'></td>
+                            <td>  <input type="button" onclick = "inserir('9')" value="9" class = 'button'></td>
+                                <td> <input type="button" value="-" class = 'button' onclick = "inserir ('-')"></td>
+                </tr>
+
+                <tr> 
+                    <td> <input type="button" onclick = "inserir('4')" value="4" class = 'button'></td>
+                        <td> <input type="button" onclick = "inserir('5')" value="5" class = 'button'></td>
+                            <td>  <input type="button" onclick = "inserir('6')" value="6" class = 'button'></td>
+                                <td> <input type="button" value="+" class = 'button' onclick = "inserir ('+')"> </td>
+                </tr>
+
+                <tr> 
+                    <td><input type="button" onclick = "inserir('1')"  value="1" class = 'button'></td>
+                        <td> <input type="button"  onclick = "inserir('2')" value="2" class = 'button'></td>
+                            <td> <input type="button" onclick = "inserir('3')" value="3" class = 'button'>  </td>
+                            <td rowspan="2"> <button class = 'button' style = "height: 106px;" onclick="calcular()"> = </button></td>
+                </tr>
+                <tr>   
+                         <td colspan="2"> <button class  = 'button' style = "width: 106px;" onclick = "inserir ('0') ">0</button></td>
+                         <td> <button class = 'button' onclick = "inserir ('.')">.</button></td>
+                 </tr>       
+            </table>
+        </div>
+    </div>
+    <script>
+        function inserir(num){
+            var numero = document.getElementById('resultado').innerHTML;
+            document.getElementById('resultado').innerHTML = numero + num 
+        }
+        function clean(){
+            document.getElementById('resultado').innerHTML = "";
+        }
+        function back()
+        {
+            var resultado = document.getElementById('resultado').innerHTML;
+            document.getElementById('resultado').innerHTML =  resultado.substring(0, resultado.length -1 )
+        }
+        function calcular(){
+            var resultado = document.getElementById('resultado').innerHTML;
+            if(resultado)
+            {
+                document.getElementById('resultado').innerHTML = eval(resultado)
+            } else
+                document.getElementById('resultado').innerHTML = "nada para calcular"
+            
+        }
+    </script>
+</body>
+</html>
