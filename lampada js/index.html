@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>VANILLA JS</title>
+</head>
+<body>
+    <header>
+        <h1> Vanilla JavaScript </h1>
+    </header>
+    <section>
+            <img src="lampada_apagada.jpg" id="lampada">
+        <div class = 'btn'>
+            <input type="button" value="Ligar" id="btnligar" onclick="ligar()">
+            <input type="button" value="Desligar" id="btndesligar" onclick="desligar()">
+        </div>
+    </section>
+    <script>
+        const turnOn = document.getElementById('btnligar');
+        const turnOff = document.getElementById('btndesligar');
+        const lamp = document.getElementById('lampada')
+        
+        function ligar(){
+            lamp.src = 'lampada_acesa.jpg'
+        }
+        function desligar(){
+            lamp.src = 'lampada_apagada.jpg'
+        }
+        
+        turnOn.addEventListener ('click', ligar)
+        turnOff.addEventListener ('click', desligar)
+        lamp.addEventListener ('mouseover', ligar)
+        lamp.addEventListener ('mouseleave', desligar)
+    </script>
+
+</body>
+</html>
